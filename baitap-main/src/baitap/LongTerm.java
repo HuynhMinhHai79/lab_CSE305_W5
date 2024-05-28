@@ -1,37 +1,67 @@
 package baitap;
 
-public class LongTerm implements IContract {
-    private String propertyID;
+public class LongTerm implements Contract {
     private String contractID;
-    private String tenantID;
     private double rentAmount;
-    @Override
-    public void BuidProperty(String propertyID) {
-        this.propertyID = propertyID;
-        
-    }
+    private String tenantID;
+    private String propertyID;
 
-    @Override
-    public void BuildContract(String contractID) {
+    public void setContractID(String contractID) {
         this.contractID = contractID;
-        
     }
 
-    @Override
-    public void BuildTenant(String tenantID) {
-        this.tenantID = tenantID;
-        
+    public double getRentAmount() {
+        return rentAmount;
     }
 
-    @Override
-    public void RentAmount(double rentAmount) {
+    public void setRentAmount(double rentAmount) {
         this.rentAmount = rentAmount;
-        
+    }
+
+    public String getTenantID() {
+        return tenantID;
+    }
+
+    public void setTenantID(String tenantID) {
+        this.tenantID = tenantID;
+    }
+
+    public String getPropertyID() {
+        return propertyID;
+    }
+
+    public void setPropertyID(String propertyID) {
+        this.propertyID = propertyID;
+    }
+
+    @Override
+    public void buildContractID() {
+        this.contractID = "LONG-" + System.currentTimeMillis();
+    }
+
+    @Override
+    public void buildPropertyID(String propertyID) {
+        this.propertyID = propertyID;
+    }
+
+    @Override
+    public void buildTenantID(String tenantID) {
+        this.tenantID = tenantID;
+    }
+
+    @Override
+    public void buildRentAmount(double rentAmount) {
+        this.rentAmount = rentAmount;
     }
 
     @Override
     public Contract signContract() {
-        return new Contract(contractID, propertyID, tenantID, rentAmount);
+        System.out.println("Long-term contract signed.");
+        return this;
     }
 
+    @Override
+    public String getContractID() {
+        return this.contractID;
+    }
 }

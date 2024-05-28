@@ -1,5 +1,4 @@
 package baitap;
-
 import java.util.*;
 
 public class User {
@@ -71,6 +70,7 @@ public class User {
             enterID = sc.nextLine();
             System.out.println("Enter your password: ");
             enterPassword = sc.nextLine();
+            sc.close();
         }
     }
 
@@ -84,6 +84,9 @@ public class User {
         } else {
             System.err.println("Wrong password, please re-enter again!");
             enterPassword = sc.nextLine();
+            sc.close();
         }
+        sc.close();
     }
+    
 }
