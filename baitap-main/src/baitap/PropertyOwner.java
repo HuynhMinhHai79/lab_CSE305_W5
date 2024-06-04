@@ -1,18 +1,16 @@
-package baitap;
-
 import java.util.ArrayList;
 
 public class PropertyOwner extends User {
 
-    public PropertyOwner(String id, String password, String email, String type) {
-        super(0, id, password, email, type);
-        // TODO Auto-generated constructor stub
+    public PropertyOwner(int id, String name, String email, String phoneNumber, String password) {
+        super(id, name, email, phoneNumber, password);
     }
 
     private ArrayList<Property> ListProperty;
 
-    public PropertyOwner(String id, String password, String email, String type, ArrayList<Property> listProperty) {
-        super(0, id, password, email, type);
+    public PropertyOwner(int id, String name, String email, String phoneNumber, String password,
+            ArrayList<Property> listProperty) {
+        super(id, name, email, phoneNumber, password);
         ListProperty = listProperty;
     }
 
@@ -38,5 +36,4 @@ public class PropertyOwner extends User {
     public void removeAccount(Property property) {
         ListProperty.remove(property);
     }
-
 }

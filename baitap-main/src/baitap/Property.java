@@ -1,5 +1,3 @@
-package baitap;
-
 public class Property {
     int PropertyID;
     String Description;

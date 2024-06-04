@@ -1,5 +1,3 @@
-package baitap;
-
 import java.util.Date;
 
 public class RentalContract {
@@ -9,47 +7,41 @@ public class RentalContract {
     private Date startDate;
     private Date endDate;
     private float rentAmount;
-    public int getContractID() {
-        return contractID;
-    }
-    public void setContractID(int contractID) {
+
+    public RentalContract(int contractID, int propertyID, int tenantID, Date startDate, float rentAmount) {
         this.contractID = contractID;
-    }
-    public int getPropertyID() {
-        return propertyID;
-    }
-    public void setPropertyID(int propertyID) {
         this.propertyID = propertyID;
-    }
-    public int getTenantID() {
-        return tenantID;
-    }
-    public void setTenantID(int tenantID) {
         this.tenantID = tenantID;
-    }
-    public Date getStartDate() {
-        return startDate;
-    }
-    public void setStartDate(Date startDate) {
         this.startDate = startDate;
-    }
-    public Date getEndDate() {
-        return endDate;
-    }
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-    public float getRentAmount() {
-        return rentAmount;
-    }
-    public void setRentAmount(float rentAmount) {
         this.rentAmount = rentAmount;
     }
 
+    public void terminateContract() {
+        this.endDate = new Date(); 
+        System.out.println("Rental contract terminated successfully.");
+    }
 
+    public int getContractID() {
+        return contractID;
+    }
 
-   
-    
-    
+    public int getPropertyID() {
+        return propertyID;
+    }
 
+    public int getTenantID() {
+        return tenantID;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public float getRentAmount() {
+        return rentAmount;
+    }
 }

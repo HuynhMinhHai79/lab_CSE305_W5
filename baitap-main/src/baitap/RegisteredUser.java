@@ -1,5 +1,3 @@
-package baitap;
-
 import java.util.List;
 
 public class RegisteredUser {

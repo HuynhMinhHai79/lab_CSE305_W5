@@ -1,46 +1,26 @@
-package baitap;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tenant extends user {
+public class Tenant {
+    private User user;
+    private List<RentalContract> listOfContracts;
 
-    public Tenant(int id, String name, String email, String phoneNumber, String password) {
-        super(id, name, email, phoneNumber, password);
-        //TODO Auto-generated constructor stub
+    public Tenant(User user) {
+        this.user = user;
+        this.listOfContracts = new ArrayList<>();
     }
 
-    private ArrayList<RentalContract> rentedProperties;
-    private String TenantID;
+    public void requestCreateRentalContract(RentalContract contract) {
 
-   
-    // public Tenant(UserBuilder builder) {
-    // super(builder);
-    // }
-    public void setRentedProperties(ArrayList<RentalContract> rentedProperties) {
-        this.rentedProperties = rentedProperties;
+        this.listOfContracts.add(contract);
+        System.out.println("Rental contract requested successfully.");
     }
-
-   
-
-    public List<RentalContract> getRentedProperties() {
-        return new ArrayList<>(rentedProperties); // Return a copy to prevent external modification
+    public void requestTerminateRentalContract(RentalContract contract) {
+        if (listOfContracts.contains(contract)) {
+            listOfContracts.remove(contract);
+            System.out.println("Rental contract terminated successfully.");
+        } else {
+            System.out.println("Invalid rental contract. Unable to terminate.");
+        }
     }
-
-    public Tenant getTenant() {
-        return this;
-    }
-
-    // public void createRentalContract(Property property, int durationMonths) {
-    //
-    // RentalContract newContract = new RentalContract(property, durationMonths);
-    // rentedProperties.add(newContract);
-    //
-    // System.out.println("Rental contract created successfully.");
-    // }
-    public void terminateRentalContract(RentalContract contract) {
-    
-
-}
 }

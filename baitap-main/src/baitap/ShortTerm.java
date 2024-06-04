@@ -1,37 +1,37 @@
-package baitap;
-
-public class ShortTerm implements IContract {
-    private String propertyID;
+public class ShortTerm implements Contract {
     private String contractID;
-    private String tenantID;
     private double rentAmount;
+    private String tenantID;
+    private String propertyID;
 
     @Override
-    public void BuidProperty(String propertyID) {
-       this.propertyID = propertyID;
-        
+    public void buildContractID() {
+        this.contractID = "SHORT-" + System.currentTimeMillis();
     }
 
     @Override
-    public void BuildContract(String contractID) {
-        this.contractID = contractID;
-        
+    public void buildPropertyID(String propertyID) {
+        this.propertyID = propertyID;
     }
 
     @Override
-    public void BuildTenant(String tenantID) {
+    public void buildTenantID(String tenantID) {
         this.tenantID = tenantID;
-        
     }
 
     @Override
-    public void RentAmount(double rentAmount) {
+    public void buildRentAmount(double rentAmount) {
         this.rentAmount = rentAmount;
-        
     }
 
     @Override
     public Contract signContract() {
-        return new Contract(contractID, propertyID, tenantID, rentAmount);
+        System.out.println("Short-term contract signed.");
+        return this;
+    }
+
+    @Override
+    public String getContractID() {
+        return this.contractID;
     }
 }

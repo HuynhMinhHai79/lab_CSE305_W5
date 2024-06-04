@@ -1,38 +1,8 @@
-package baitap;
-
 public class LongTerm implements Contract {
     private String contractID;
     private double rentAmount;
     private String tenantID;
     private String propertyID;
-
-    public void setContractID(String contractID) {
-        this.contractID = contractID;
-    }
-
-    public double getRentAmount() {
-        return rentAmount;
-    }
-
-    public void setRentAmount(double rentAmount) {
-        this.rentAmount = rentAmount;
-    }
-
-    public String getTenantID() {
-        return tenantID;
-    }
-
-    public void setTenantID(String tenantID) {
-        this.tenantID = tenantID;
-    }
-
-    public String getPropertyID() {
-        return propertyID;
-    }
-
-    public void setPropertyID(String propertyID) {
-        this.propertyID = propertyID;
-    }
 
     @Override
     public void buildContractID() {
